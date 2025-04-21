@@ -30,3 +30,6 @@
     transition: background-color 0.3s ease;
     text-align: left;
 }
+.quizlist li:hover {
+    background-color: #e0e0e0;
+}
