@@ -7,5 +7,10 @@ loginTab.onclick = () => {
     registerForm.classList.add("hidden");
     loginTab.classList.add("active");
     registerTab.classList.remove("active");
-  };
-  
+};
+registerTab.onclick = () => {
+    registerForm.classList.remove("hidden");
+    loginForm.classList.add("hidden");
+    registerTab.classList.add("active");
+    loginTab.classList.remove("active");
+};
