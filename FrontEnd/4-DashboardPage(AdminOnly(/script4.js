@@ -7,4 +7,14 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       const allScores = JSON.parse(localStorage.getItem("scores") || "{}");
       const userScoresBody = document.getElementById("userscoresbody");
+      for (const email in allScores) {
+        const tr = document.createElement("tr");
+        const tdEmail = document.createElement("td");
+        tdEmail.textContent = email;
+        const tdScores = document.createElement("td");
+        tdScores.textContent = allScores[email].map(score => `${score.quizTitle}: ${score.score}`).join(", ");
+        tr.appendChild(tdEmail);
+        tr.appendChild(tdScores);
+        userScoresBody.appendChild(tr);
+      }
 });
