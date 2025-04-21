@@ -53,3 +53,6 @@ body {
     cursor: pointer;
     font-weight: bold;
 }
+.authenticationform button:hover {
+    background-color: #3367d6;
+}
