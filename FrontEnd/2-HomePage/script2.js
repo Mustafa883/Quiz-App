@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const user = JSON.parse(localStorage.getItem("currentUser"));
     if (!user) {
       alert("Please login first.");
-      window.location.href = "index1.html";
+      window.location.href = "index2.html";
       return;
     }
     welcomemessage.textContent = `Hello, ${user.email}! Ready to take a quiz?`;
