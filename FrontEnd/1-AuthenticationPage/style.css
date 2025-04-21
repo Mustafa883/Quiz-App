@@ -28,3 +28,7 @@ body {
     font-weight: bold;
     transition: background 0.3s;
 }
+.tabs .active {
+    background-color: #4285f4;
+    color: #fff;
+}
