@@ -5,4 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "index.html";
         return;
       }
+      const allScores = JSON.parse(localStorage.getItem("scores") || "{}");
+      const userScoresBody = document.getElementById("userscoresbody");
 });
