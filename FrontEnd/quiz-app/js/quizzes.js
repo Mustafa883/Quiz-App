@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const quizListElement = document.getElementById("quizlist");
-    const welcomemessage = document.getElementById("welcomemessage");
+    const quizListElement = document.getElementById("quiz-list");
+    const welcomeMsg = document.getElementById("welcome-msg");
     const user = JSON.parse(localStorage.getItem("currentUser"));
     if (!user) {
       alert("Please login first.");
       window.location.href = "index.html";
       return;
     }
-    welcomemessage.textContent = `Hello, ${user.email}! Ready to take a quiz?`;
+    welcomeMsg.textContent = `Hello, ${user.email}! Ready to take a quiz?`;
     const quizzes = JSON.parse(localStorage.getItem("quizzes") || "[]");
     if (quizzes.length === 0) {
       quizListElement.innerHTML = "<li>No quizzes available.</li>";
@@ -23,3 +23,4 @@ document.addEventListener("DOMContentLoaded", () => {
       quizListElement.appendChild(li);
     });
   });
+  
