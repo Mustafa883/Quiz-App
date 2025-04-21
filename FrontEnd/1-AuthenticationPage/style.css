@@ -19,3 +19,12 @@ body {
     justify-content: space-between;
     margin-bottom: 15px;
 }
+.tabs button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
