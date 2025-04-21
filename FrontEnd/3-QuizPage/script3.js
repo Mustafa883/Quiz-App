@@ -9,4 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
       window.location.href = "index.html";
       return;
     }
+    const quiz = JSON.parse(localStorage.getItem("currentQuiz"));
+    if (!quiz) {
+      alert("No quiz selected.");
+      window.location.href = "quiz.html";
+      return;
+    }
 });
