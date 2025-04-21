@@ -32,3 +32,7 @@ body {
     background-color: #4285f4;
     color: #fff;
 }
+.authenticationform {
+    display: flex;
+    flex-direction: column;
+  }
