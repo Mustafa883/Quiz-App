@@ -17,4 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
         tr.appendChild(tdScores);
         userScoresBody.appendChild(tr);
       }
+      const logoutBtn = document.getElementById("logout-btn");
+      logoutBtn.onclick = () => {
+        localStorage.removeItem("currentUser");
+        window.location.href = "index.html"; 
+      };
 });
