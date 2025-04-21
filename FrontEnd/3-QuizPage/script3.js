@@ -43,4 +43,30 @@ document.addEventListener("DOMContentLoaded", () => {
         block.appendChild(optionsDiv);
         quizForm.appendChild(block);
       });
+      submitBtn.onclick = () => {
+        let score = 0;
+    
+        quiz.questions.slice(0, 3).forEach((q, index) => {
+          const selected = document.querySelector(`input[name="question${index}"]:checked`);
+          if (selected && selected.value === q.answer) {
+            score++;
+          }
+        });
+    
+        resultBox.textContent = `You scored ${score} out of 3.`;
+        resultBox.classList.remove("hidden");
+        const allScores = JSON.parse(localStorage.getItem("scores") || "{}");
+        if (!allScores[user.email]) {
+          allScores[user.email] = [];
+        }
+    
+        allScores[user.email].push({
+          quizTitle: quiz.title,
+          score: score,
+          date: new Date().toLocaleString()
+        });
+    
+        localStorage.setItem("scores", JSON.stringify(allScores));
+        submitBtn.disabled = true;
+      };
 });
