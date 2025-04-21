@@ -14,3 +14,17 @@ registerTab.onclick = () => {
     registerTab.classList.add("active");
     loginTab.classList.remove("active");
 };
+registerForm.onsubmit = (e) => {
+    e.preventDefault();
+    const email = document.getElementById("register-email").value;
+    const password = document.getElementById("register-password").value;
+    let users = JSON.parse(localStorage.getItem("users") || "[]");
+    if (users.find(user => user.email === email)) {
+      alert("User already exists!");
+      return;
+    }
+    users.push({ email, password });
+    localStorage.setItem("users", JSON.stringify(users));
+    alert("Registration successful! Please log in.");
+    loginTab.click(); // Switch to login tab
+  };
