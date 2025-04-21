@@ -19,3 +19,8 @@ table {
     border-collapse: collapse;
     margin-top: 20px;
 }
+th, td {
+    padding: 12px 20px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
