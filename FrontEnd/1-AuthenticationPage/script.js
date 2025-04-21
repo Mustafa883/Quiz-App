@@ -26,5 +26,23 @@ registerForm.onsubmit = (e) => {
     users.push({ email, password });
     localStorage.setItem("users", JSON.stringify(users));
     alert("Registration successful! Please log in.");
-    loginTab.click(); // Switch to login tab
-  };
+    loginTab.click(); 
+};
+loginForm.onsubmit = (e) => {
+    e.preventDefault();
+    const email = document.getElementById("login-email").value;
+    const password = document.getElementById("login-password").value;
+    if (email === "admin@quiz.com" && password === "admin123") {
+      localStorage.setItem("currentUser", JSON.stringify({ email, isAdmin: true }));
+      window.location.href = "dashboard.html";
+      return;
+    }
+    let users = JSON.parse(localStorage.getItem("users") || "[]");
+    const user = users.find(u => u.email === email && u.password === password);  
+    if (user) {
+      localStorage.setItem("currentUser", JSON.stringify({ email, isAdmin: false }));
+      window.location.href = "quiz.html";
+    } else {
+      alert("Invalid email or password.");
+    }
+};
