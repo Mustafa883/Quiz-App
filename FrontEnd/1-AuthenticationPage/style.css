@@ -43,3 +43,13 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+.authenticationform button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
