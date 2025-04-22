@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const user = JSON.parse(localStorage.getItem("currentUser"));
     if (!user) {
       alert("Please login first.");
-      window.location.href = "index.html";
+      window.location.href = "./index.html";
       return;
     }
     welcomeMsg.textContent = `Hello, ${user.email}! Ready to take a quiz?`;
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
       li.textContent = quiz.title;
       li.onclick = () => {
         localStorage.setItem("currentQuiz", JSON.stringify(quiz));
-        window.location.href = "take-quiz.html";
+        window.location.href = "./take-quiz.html";
       };
       quizListElement.appendChild(li);
     });

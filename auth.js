@@ -34,14 +34,14 @@ loginForm.onsubmit = (e) => {
   const password = document.getElementById("login-password").value;
   if (email === "admin@quiz.com" && password === "admin123") {
     localStorage.setItem("currentUser", JSON.stringify({ email, isAdmin: true }));
-    window.location.href = "dashboard.html";
+    window.location.href = "./dashboard.html";
     return;
   }
   let users = JSON.parse(localStorage.getItem("users") || "[]");
   const user = users.find(u => u.email === email && u.password === password);
   if (user) {
     localStorage.setItem("currentUser", JSON.stringify({ email, isAdmin: false }));
-    window.location.href = "quiz.html";
+    window.location.href = "./quiz.html";
   } else {
     alert("Invalid email or password.");
   }

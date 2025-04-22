@@ -6,13 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const user = JSON.parse(localStorage.getItem("currentUser"));
     if (!user) {
       alert("Please login first.");
-      window.location.href = "index.html";
+      window.location.href = "./index.html";
       return;
     }
     const quiz = JSON.parse(localStorage.getItem("currentQuiz"));
     if (!quiz) {
       alert("No quiz selected.");
-      window.location.href = "quiz.html";
+      window.location.href = "./quiz.html";
       return;
     }
     quizTitle.textContent = quiz.title;
